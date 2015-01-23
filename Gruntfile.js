@@ -10,7 +10,8 @@
 var grunt = require('grunt'),
     fs = require('fs'),
     path = require('path'),
-    files = fs.readdirSync(path.join(root.path, 'dist'));
+    distPath = path.join(root.path, 'dist'),
+    files = fs.readdirSync(distPath);
 
 grunt.loadNpmTasks('grunt-s3');
 
