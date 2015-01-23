@@ -7,16 +7,15 @@ Static blog application that compiles and pushes to Amazon S3.
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+* [Node.js](http://nodejs.org/) v0.10.x
+* [PhantomJS](http://phantomjs.org/) (for development)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `ember install`
+* `git clone https://github.com/tubbo/blog.git`
+* `cd blog`
+* `npm install`
+* `bower install`
 
 ## Running / Development
 
@@ -37,7 +36,7 @@ provided. You can also run tests and deploy to S3.
 
 * `npm test`
 
-### Building for Production
+### Building
 
 * `ember build` (development)
 * `ember build --environment production` (production)
@@ -54,6 +53,9 @@ following command to deploy the static app to Amazon S3:
 
 * [ember.js](http://emberjs.com/)
 * [ember-cli](http://www.ember-cli.com/)
+* [Grunt](http://gruntjs.com)
+* [Grunt S3](https://www.npmjs.com/package/grunt-s3)
+* [Bower](http://bower.io)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
