@@ -1,4 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  model: function(params) {
+    var id = [
+      params.year,
+      params.month,
+      params.day,
+      params.title
+    ].join('-');
+
+    return this.store.find('article', id);
+  },
+
+  controller: function(controller, article) {
+    controller.model = article;
+
+    $.get('/articles/'+controller.model.id+'.html', function(response) {
+      controller.model.body = response
+    });
+  }
 });

@@ -1,7 +1,6 @@
 # Blog
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Static blog application that compiles and pushes to Amazon S3.
 
 ## Prerequisites
 
@@ -17,31 +16,39 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * change into the new directory
-* `npm install`
-* `bower install`
+* `ember install`
 
 ## Running / Development
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+## Usage
 
-Make use of the many generators for code, try `ember help generate` for more details
+Mostly, the app doesn't need to be touched unless it's being developed
+upon. To write articles, you can use a handy-dandy generator that is
+provided. You can also run tests and deploy to S3.
+
+### Writing a Post
+
+`ember generate article {title}`
 
 ### Running Tests
 
-* `ember test`
-* `ember test --server`
+* `npm test`
 
-### Building
+### Building for Production
 
 * `ember build` (development)
 * `ember build --environment production` (production)
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+Make sure you have **$AWS_ACCESS_KEY_ID** and **$AWS_SECRET_ACCESS_KEY**
+set in your environment, (as well as **$AWS_S3_BUCKET**), then run the
+following command to deploy the static app to Amazon S3:
+
+`npm deploy`
 
 ## Further Reading / Useful Links
 

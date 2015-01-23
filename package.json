@@ -1,7 +1,7 @@
 {
-  "name": "blog",
-  "version": "0.0.0",
-  "description": "Small description for blog goes here",
+  "name": "psychedeli.ca",
+  "version": "0.0.1",
+  "description": "tubbo's blog and personal site",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -10,13 +10,14 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "grunt s3"
   },
-  "repository": "",
+  "repository": "https://github.com/tubbo/psychedeli.ca",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Tom Scott",
   "license": "MIT",
   "devDependencies": {
     "app-root-path": "1.0.0",
@@ -33,6 +34,8 @@
     "ember-export-application-global": "^1.0.0",
     "express": "^4.8.5",
     "glob": "^4.0.5",
+    "grunt": "0.4.5",
+    "grunt-s3": "0.2.0-alpha.3",
     "marked": "0.3.2"
   }
 }
