@@ -15,10 +15,9 @@ var grunt = require('grunt'),
 grunt.loadNpmTasks('grunt-s3');
 
 grunt.initConfig({
-  blog: grunt.file.readJSON('config/blog.json'),
   s3: {
     options: {
-      bucket: '<%= blog.bucket %>',
+      bucket: process.env.AWS_S3_BUCKET_NAME,
       access: 'public-read',
       headers: {
         // Two Year cache policy (1000 * 60 * 60 * 24 * 730)
