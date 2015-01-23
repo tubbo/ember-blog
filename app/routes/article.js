@@ -16,7 +16,7 @@ export default Ember.Route.extend({
     controller.model = article;
 
     $.get('/articles/'+controller.model.id+'.html', function(response) {
-      controller.model.body = response
+      controller.model.set('body', response);
     });
   }
 });
