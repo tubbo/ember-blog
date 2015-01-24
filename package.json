@@ -1,5 +1,5 @@
 {
-  "name": "psychedeli.ca",
+  "name": "psychedelica",
   "version": "0.0.1",
   "description": "tubbo's blog and personal site",
   "private": true,
@@ -37,6 +37,8 @@
     "glob": "^4.0.5",
     "grunt": "0.4.5",
     "grunt-s3": "0.2.0-alpha.3",
-    "marked": "0.3.2"
+    "js-yaml": "^3.2.5",
+    "marked": "0.3.2",
+    "merge": "^1.2.0"
   }
 }

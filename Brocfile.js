@@ -1,9 +1,12 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
-    ArticlesCollection = require('./lib/collection'),
+    ArticleCollection = require('./lib/article-collection'),
     app = new EmberApp(),
-    articles = new ArticlesCollection();
+    articles = new ArticleCollection({
+      source: 'app/articles',
+      destination: 'public/articles'
+    });
 
 articles.compile();
 
