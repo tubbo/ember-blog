@@ -1,0 +1,21 @@
+@import "bower_components/foundation/scss/foundation.scss";
+@import "bower_components/foundation/scss/normalize.scss";
+
+header, main, footer, article {
+  @extend .row;
+}
+
+.none {
+  text-align: center;
+  color: gray;
+}
+
+body {
+  footer {
+    nav {
+      a {
+        padding-left: 15px;
+      }
+    }
+  }
+}

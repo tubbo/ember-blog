@@ -2,7 +2,13 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
     ArticleCollection = require('./lib/article-collection'),
-    app = new EmberApp(),
+    app = new EmberApp({
+      sassOptions: {
+        includePaths: [
+          'bower_components/foundation/scss'
+        ]
+      }
+    }),
     articles = new ArticleCollection({
       source: 'app/articles',
       destination: 'public/articles'
