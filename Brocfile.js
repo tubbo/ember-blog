@@ -16,4 +16,10 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
 
 articles.compile();
 
+app.import('bower_components/ember-document-title/dist/document-title.amd.js', {
+  exports: {
+    'ember-document-title': ['default']
+  }
+});
+
 module.exports = app.toTree();

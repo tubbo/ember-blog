@@ -12,6 +12,7 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "foundation": "~5.5.0"
+    "foundation": "~5.5.0",
+    "ember-document-title": "~0.1.0"
   }
 }

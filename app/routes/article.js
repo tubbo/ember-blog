@@ -2,6 +2,8 @@ import Ember from 'ember';
 import $ from 'jquery';
 
 export default Ember.Route.extend({
+  title: Ember.computed.reads('controller.title'),
+
   model: function(params) {
     var id = [
       params.year,
