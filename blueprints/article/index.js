@@ -1,5 +1,5 @@
-var dasherize = require('sugar/dasherize'),
-    titleize = require('sugar/titleize'),
+var dasherize = require('underscore.string/dasherize'),
+    titleize = require('underscore.string/titleize'),
     moment = require('moment'),
     today = moment();
 
