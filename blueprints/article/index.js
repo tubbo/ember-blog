@@ -1,8 +1,12 @@
-import dasherize, titleize from 'sugar';
-import moment from 'moment';
+var dasherize = require('sugar/dasherize'),
+    titleize = require('sugar/titleize'),
+    moment = require('moment'),
+    today = moment();
 
 /**
- * Generates an Article in Markdown and YAML Front Matter.
+ * Generates an Article in Markdown and YAML Front Matter. The file is
+ * placed in `./app/articles` and will be compiled to static HTML on
+ * deployment.
  */
 
 module.exports = {
@@ -15,7 +19,7 @@ module.exports = {
    * @returns {string} a normalized filename
    */
   normalizeEntityName: function(entityName) {
-    var date = moment().format('YYYY-DD-MM'),
+    var date = today.format('YYYY-DD-MM'),
         name = dasherize(entityName);
 
     return [date, time].join('-');
@@ -31,7 +35,7 @@ module.exports = {
   locals: function(options) {
     return {
       titleizedModuleName: titleize(classifiedModuleName),
-      todaysDate: moment().format(),
+      todaysDate: today.format(),
       defaultCategory: 'gbs'
     }
   }
