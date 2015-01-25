@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import Ember.GoogleAnalyticsTrackingMixin from 'ember-google-analytics';
 import config from './config/environment';
 
-var Router = Ember.Router.extend({
+var Router = Ember.Router.extend(Ember.GoogleAnalyticsTrackingMixin, {
   location: config.locationType
 });
 
