@@ -1,8 +1,7 @@
 import Ember from 'ember';
-import DocumentTitle from 'ember-document-title';
 import config from './config/environment';
 
-var Router = Ember.Router.extend(DocumentTitle, {
+var Router = Ember.Router.extend({
   location: config.locationType
 });
 
