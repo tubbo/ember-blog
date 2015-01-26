@@ -6,6 +6,8 @@ compilation system, which allows the app to be hosted and distributed
 across the world for pennies using [Amazon Web Services][aws] (namely
 S3 and CloudFront).
 
+[![Build Status](https://travis-ci.org/tubbo/blog.svg)](https://travis-ci.org/tubbo/blog)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer:
