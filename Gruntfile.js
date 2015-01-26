@@ -21,7 +21,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'lib/**']
+      files: ['Gruntfile.js', 'lib/**', 'Brocfile.js']
     },
     aws_s3: {
       options: {
