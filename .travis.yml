@@ -12,8 +12,6 @@ deploy:
   provider: s3
   bucket: psychedeli.ca
   skip_cleanup: true
-  endpoint: psychedeli.ca.s3-website-us-east-1.amazonaws.com
-  region: us-east-1
   local_dir: dist
   access_key_id:
     - secure: OXBgE5PBhdjej2fMmiMvXteEMxEReIv1pc7mwRFVOfFdssdpFaps8wWvs9jPBeNx7cdgExXyU8V/hum+SX39eTY5fyvPMZbIjMrMNAo+8M9X3T0EgOE8YXbi1y2h/vq29n3r+11P4CSaoFa+UuqiFTowD/4aNx1VXNTRG7FraE8=
