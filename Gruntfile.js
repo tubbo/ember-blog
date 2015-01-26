@@ -16,6 +16,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       options: {
+        reporter: require('jshint-stylish'),
         esnext: true
       },
       files: [
@@ -23,7 +24,8 @@ module.exports = function(grunt) {
         'blueprints/**/*.js',
         'config/**/*.js',
         'lib/**/*.js',
-        '*file.js'
+        '*file.js',
+        'tests/**/*.js'
       ]
     },
     shell: {
