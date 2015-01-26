@@ -1,2 +1,8 @@
 # http://www.robotstxt.org
 User-agent: *
+Disallow: /articles/
+Disallow: /articles.json
+Disallow: /assets/
+Disallow: /crossdomain.xml
+Disallow: /tests/
+Disallow: /testem.js
