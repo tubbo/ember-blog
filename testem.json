@@ -7,5 +7,7 @@
   "launch_in_dev": [
     "PhantomJS",
     "Chrome"
-  ]
+  ],
+  "before_tests": "istanbul instrument --output instrumented .",
+  "after_tests": "istanbul report lcov"
 }
