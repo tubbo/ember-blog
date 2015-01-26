@@ -10,10 +10,16 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-aws-s3');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['jshint', 'aws_s3']);
+  grunt.registerTask('default', ['jshint', 'shell:build', 'aws_s3']);
 
   grunt.initConfig({
+    shell: {
+      build: {
+        command: 'ember build --environment production'
+      }
+    },
     jshint: {
       files: ['Gruntfile.js']
     },
