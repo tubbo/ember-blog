@@ -1,34 +1,30 @@
----
 language: node_js
 node_js:
-  - '0.10'
-
+- '0.10'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-    - bower_components
-
+  - node_modules
+  - bower_components
 before_install:
-  - 'npm config set spin false'
-  - 'npm install -g npm@^2'
-
+- npm config set spin false
+- npm install -g npm@^2
 install:
-  - 'npm install -g bower ember-cli'
-  - 'ember install'
-
+- npm install -g bower ember-cli
+- ember install
 script:
-  - 'npm test'
-
+- npm test
 after_success:
-  - 'rm -r dist'
-  - 'ember build --environment production'
-
+- rm -r dist
+- ember build --environment production
 deploy:
   provider: s3
-  access_key_id:
-  secret_access_key:
-  bucket: 'psychedeli.ca'
-  endpoint: 'psychedeli.ca.s3-website-us-east-1.amazonaws.com'
+  access_key_id: 
+  secret_access_key: 
+  bucket: psychedeli.ca
+  endpoint: psychedeli.ca.s3-website-us-east-1.amazonaws.com
   local_dir: dist
+env:
+  global:
+  - secure: OXBgE5PBhdjej2fMmiMvXteEMxEReIv1pc7mwRFVOfFdssdpFaps8wWvs9jPBeNx7cdgExXyU8V/hum+SX39eTY5fyvPMZbIjMrMNAo+8M9X3T0EgOE8YXbi1y2h/vq29n3r+11P4CSaoFa+UuqiFTowD/4aNx1VXNTRG7FraE8=
+  - secure: pFjObiIOMh53Df7QQPoeMfD7LqmjauUBLWpfvS3SxBjzwjB40ToCgBG1t2pcbNFJRu5WDpqK6LKKEcPOFPGgVPiHepDuA6rRSQEC81nzbpBUmpWyQXulIM+NQ82UZ6uQKvOlGbHzTNufSBQ9nnIl+RAlhlDOBkFTDmZhp0r48FY=
