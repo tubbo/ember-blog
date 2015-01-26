@@ -11,16 +11,15 @@ cache:
     - bower_components
 
 before_install:
-  - "npm config set spin false"
-  - "npm install -g npm@^2"
+  - 'npm config set spin false'
+  - 'npm install -g npm@^2'
 
 install:
-  - npm install -g bower
-  - npm install
-  - bower install
+  - 'npm install -g bower ember-cli'
+  - 'ember install'
 
 script:
-  - npm test
+  - 'npm test'
 
 after_success:
   - 'rm -r dist'
