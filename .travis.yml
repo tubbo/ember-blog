@@ -8,6 +8,7 @@ sudo: false
 cache:
   directories:
     - node_modules
+    - bower_components
 
 before_install:
   - "npm config set spin false"
@@ -20,3 +21,15 @@ install:
 
 script:
   - npm test
+
+after_success:
+  - 'rm -r dist'
+  - 'ember build --environment production'
+
+deploy:
+  provider: s3
+  access_key_id:
+  secret_access_key:
+  bucket: 'psychedeli.ca'
+  endpoint: 'psychedeli.ca.s3-website-us-east-1.amazonaws.com'
+  local_dir: dist
