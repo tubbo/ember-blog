@@ -8,6 +8,6 @@
     "PhantomJS",
     "Chrome"
   ],
-  "before_tests": "istanbul instrument --output coverage/instrumented app",
+  "before_tests": "istanbul instrument --output coverage/instrumented .",
   "after_tests": "istanbul report"
 }

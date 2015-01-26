@@ -1,38 +1,35 @@
 /**
- * Simple S3 build script for pushing files to Amazon. Takes all files
- * in ./dist and uploads them to a configured S3 bucket. Use Amazon's
- * web interface to configure that bucket for public display, and you
- * got yourself a web site! Bonus points if you use CloudFront to
- * distribute these assets all over the world for ultra-fast render
- * times.
+ * Grunt is used to build and deploy the application after a successful
+ * test run. It shells out to build the app via Ember CLI, then uses the
+ * aws_s3 plugin task to synchronize all files in ./dist with the
+ * configured bucket on Amazon S3. Simply running `grunt` will make all
+ * of this happen, as well as lint the entire app tree with jshint.
  */
 
 module.exports = function(grunt) {
-  grunt.loadNpmTasks('grunt-aws-s3');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-aws-s3');
 
-  grunt.registerTask('build', ['shell:build']);
-  grunt.registerTask('coverage', ['shell:codeclimate']);
-  grunt.registerTask('deploy', ['aws_s3']);
-  grunt.registerTask('default', ['jshint', 'build', 'coverage', 'deploy']);
+  grunt.registerTask('default', ['jshint', 'shell:build', 'aws_s3']);
 
   grunt.initConfig({
+    jshint: {
+      options: {
+        esnext: true
+      },
+      files: [
+        'app/**/*.js',
+        'blueprints/**/*.js',
+        'config/**/*.js',
+        'lib/**/*.js',
+        '*file.js'
+      ]
+    },
     shell: {
       build: {
         command: 'ember build --environment production'
-      },
-      codeclimate: {
-        command: 'cat coverage/lcov.info | codeclimate'
       }
-    },
-    jshint: {
-      files: [
-        'Gruntfile.js',
-        'lib/**',
-        'Brocfile.js',
-        'blueprints/article/index.js'
-      ]
     },
     aws_s3: {
       options: {
