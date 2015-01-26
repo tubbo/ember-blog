@@ -7,13 +7,9 @@ cache:
 install:
   - npm install
   - ember install
-script:
-  - npm test
-after_script:
-  - istanbul report lcovonly
-  - codeclimate < coverage/lcov.info
-after_success:
-  - grunt
+script: npm test
+after_script: cat coverage/lcov.info | codeclimate
+after_success: grunt
 env:
   global:
     - secure: AOJ+LfO0apX4NMzXgX9a8pm/+iuUtDofRox5oxVSL77GjYoaOhMrRg6BDzVyjdyaylWbqza2la34dsVUezJufZMJpDpQ/cZVbQWFfUbKlxdZCzxDdi4YX+xhGA5Z9R/L+ketfNZALXe8vbbwXnksV77UHnPiSh8zUjQep+AEqH0=

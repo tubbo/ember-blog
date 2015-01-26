@@ -7,6 +7,8 @@ across the world for pennies using [Amazon Web Services][aws] (namely
 S3 and CloudFront).
 
 [![Build Status](https://travis-ci.org/tubbo/blog.svg)](https://travis-ci.org/tubbo/blog)
+[![Code Climate](https://codeclimate.com/github/tubbo/blog/badges/gpa.svg)](https://codeclimate.com/github/tubbo/blog)
+[![Test Coverage](https://codeclimate.com/github/tubbo/blog/badges/coverage.svg)](https://codeclimate.com/github/tubbo/blog)
 
 ## Prerequisites
 
