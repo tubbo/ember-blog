@@ -2,18 +2,13 @@ language: node_js
 sudo: false
 cache:
   directories:
-    - node_modules
-    - bower_components
-#before_install: 'npm install -g npm@^2'
+  - node_modules
+  - bower_components
 install: ember install
 script: npm test
-after_success: ember build
-deploy:
-  provider: s3
-  bucket: psychedeli.ca
-  skip_cleanup: true
-  local_dir: dist
-  access_key_id:
-    - secure: OXBgE5PBhdjej2fMmiMvXteEMxEReIv1pc7mwRFVOfFdssdpFaps8wWvs9jPBeNx7cdgExXyU8V/hum+SX39eTY5fyvPMZbIjMrMNAo+8M9X3T0EgOE8YXbi1y2h/vq29n3r+11P4CSaoFa+UuqiFTowD/4aNx1VXNTRG7FraE8=
-  secret_access_key:
-    - secure: pFjObiIOMh53Df7QQPoeMfD7LqmjauUBLWpfvS3SxBjzwjB40ToCgBG1t2pcbNFJRu5WDpqK6LKKEcPOFPGgVPiHepDuA6rRSQEC81nzbpBUmpWyQXulIM+NQ82UZ6uQKvOlGbHzTNufSBQ9nnIl+RAlhlDOBkFTDmZhp0r48FY=
+after_success: grunt
+env:
+  global:
+  - secure: AOJ+LfO0apX4NMzXgX9a8pm/+iuUtDofRox5oxVSL77GjYoaOhMrRg6BDzVyjdyaylWbqza2la34dsVUezJufZMJpDpQ/cZVbQWFfUbKlxdZCzxDdi4YX+xhGA5Z9R/L+ketfNZALXe8vbbwXnksV77UHnPiSh8zUjQep+AEqH0=
+  - secure: o889/bNEZvnritIhaSrReTuAZD2WHGtYdAr99sj22dAkg5gZIdCz0Ny+iTLUFwpKb7twDmrWcUAwzWhKzmlhTxBa3YemMQPVAcCFYmkfdypDBlUMAQrQ4SQcsPTJikSHPPZr46kW4iry62Gk2iTg1nwhgsAARwYy0aOoB+eiPXk=
+  - secure: YTJw2q2hx8tdhRhKvTyrhoQQcRAUV6O5yeWD5QKea7NB2Qmoyky+7j7B757PZ1Ve/F8XH88Bxy5LGKAYVsqmjjzHsIZo31042MPQNxiOojqDPfklz4Spej5YTmDz0gD8upcrSnHh0gSskdZDF2NpWGAQkoh10mP4Nda17RszzwQ=
