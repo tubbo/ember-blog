@@ -4,8 +4,9 @@ cache:
   directories:
   - node_modules
   - bower_components
-before_install: npm install -g ember-cli grunt-cli
-install: ember install
+install:
+  - npm install
+  - ember install
 script: npm test
 after_success: grunt
 env:
