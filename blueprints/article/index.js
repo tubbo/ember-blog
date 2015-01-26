@@ -37,6 +37,6 @@ module.exports = {
       titleizedModuleName: titleize(classifiedModuleName),
       todaysDate: today.format(),
       defaultCategory: 'gbs'
-    }
+    };
   }
 };
