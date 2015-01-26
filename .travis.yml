@@ -22,7 +22,7 @@ deploy:
   bucket: psychedeli.ca
   endpoint: psychedeli.ca.s3-website-us-east-1.amazonaws.com
   local_dir: dist
-env:
-  global:
-  - secure: OXBgE5PBhdjej2fMmiMvXteEMxEReIv1pc7mwRFVOfFdssdpFaps8wWvs9jPBeNx7cdgExXyU8V/hum+SX39eTY5fyvPMZbIjMrMNAo+8M9X3T0EgOE8YXbi1y2h/vq29n3r+11P4CSaoFa+UuqiFTowD/4aNx1VXNTRG7FraE8=
-  - secure: pFjObiIOMh53Df7QQPoeMfD7LqmjauUBLWpfvS3SxBjzwjB40ToCgBG1t2pcbNFJRu5WDpqK6LKKEcPOFPGgVPiHepDuA6rRSQEC81nzbpBUmpWyQXulIM+NQ82UZ6uQKvOlGbHzTNufSBQ9nnIl+RAlhlDOBkFTDmZhp0r48FY=
+  access_key_id:
+    - secure: OXBgE5PBhdjej2fMmiMvXteEMxEReIv1pc7mwRFVOfFdssdpFaps8wWvs9jPBeNx7cdgExXyU8V/hum+SX39eTY5fyvPMZbIjMrMNAo+8M9X3T0EgOE8YXbi1y2h/vq29n3r+11P4CSaoFa+UuqiFTowD/4aNx1VXNTRG7FraE8=
+  secret_access_key:
+    - secure: pFjObiIOMh53Df7QQPoeMfD7LqmjauUBLWpfvS3SxBjzwjB40ToCgBG1t2pcbNFJRu5WDpqK6LKKEcPOFPGgVPiHepDuA6rRSQEC81nzbpBUmpWyQXulIM+NQ82UZ6uQKvOlGbHzTNufSBQ9nnIl+RAlhlDOBkFTDmZhp0r48FY=
