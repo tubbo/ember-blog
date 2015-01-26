@@ -18,7 +18,7 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    googleAnalyticsId: 'UA-XXXXXXX-X';
+    googleAnalyticsId: 'UA-XXXXXXX-X'
   };
 
   if (environment === 'development') {

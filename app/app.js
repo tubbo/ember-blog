@@ -14,6 +14,7 @@ var App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
-App.ApplicationAdapter = DS.RESTAdapter;
+App.ApplicationAdapter = DS.RESTAdapter.extend({
+});
 
 export default App;

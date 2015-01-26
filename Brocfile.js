@@ -2,13 +2,13 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
     ArticleCollection = require('./lib/article-collection'),
-    config = require('./config/environment')(env),
+    config = require('./config/environment')(process.env.EMBER_ENV),
     app = new EmberApp({
       sassOptions: {
         includePaths: [
           'bower_components/foundation/scss'
         ]
-      }
+      },
       inlineContent: {
         'google-analytics' : {
           file: './ga.js',
