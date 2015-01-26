@@ -1,4 +1,4 @@
-/* global require, module */
+/* global require, module, process */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
     ArticleCollection = require('./lib/article-collection'),
