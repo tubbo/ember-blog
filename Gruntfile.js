@@ -12,16 +12,27 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['jshint', 'shell:build', 'aws_s3']);
+  grunt.registerTask('build', ['shell:build']);
+  grunt.registerTask('coverage', ['shell:codeclimate']);
+  grunt.registerTask('deploy', ['aws_s3']);
+  grunt.registerTask('default', ['jshint', 'build', 'coverage', 'deploy']);
 
   grunt.initConfig({
     shell: {
       build: {
         command: 'ember build --environment production'
+      },
+      codeclimate: {
+        command: 'cat coverage/lcov.info | codeclimate'
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'lib/**', 'Brocfile.js', 'blueprints/article/index.js']
+      files: [
+        'Gruntfile.js',
+        'lib/**',
+        'Brocfile.js',
+        'blueprints/article/index.js'
+      ]
     },
     aws_s3: {
       options: {

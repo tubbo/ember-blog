@@ -8,6 +8,6 @@
     "PhantomJS",
     "Chrome"
   ],
-  "before_tests": "istanbul instrument --output instrumented .",
-  "after_tests": "istanbul report lcov"
+  "before_tests": "istanbul instrument --output coverage/instrumented app",
+  "after_tests": "istanbul report"
 }

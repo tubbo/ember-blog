@@ -1,0 +1,7 @@
+verbose: true
+instrumentation:
+  output: coverage/instrumented
+  save-baseline: true
+reporting:
+  formats:
+    - lcovonly

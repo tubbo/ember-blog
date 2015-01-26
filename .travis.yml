@@ -8,7 +8,7 @@ install:
   - npm install
   - ember install
 script: npm test
-after_script: cat coverage/lcov.info | codeclimate
+after_script: 
 after_success: grunt
 env:
   global:
