@@ -1,5 +1,11 @@
 {{#each controller}}
-  {{partial 'article'}}
+  <div class="row">
+    <div class="large-2 columns">&nbsp;</div>
+    <div class="large-8 columns">
+      {{partial 'article'}}
+    </div>
+    <div class="large-2 columns">&nbsp;</div>
+  </div>
 {{else}}
-  <div class="error empty">No articles found.</div>
+  <div class="loading empty">No articles found.</div>
 {{/each}}

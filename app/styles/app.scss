@@ -1,10 +1,6 @@
 @import "bower_components/foundation/scss/foundation.scss";
 @import "bower_components/foundation/scss/normalize.scss";
 
-header, main, footer, article {
-  @extend .row;
-}
-
 .error {
   text-align: center;
   color: gray;
@@ -12,7 +8,27 @@ header, main, footer, article {
 
 body {
   header {
+    #profile-image {
+      border-radius: 50em;
+      position: relative;
+      display: inline-block;
+      background: url(http://f.psychedeli.ca/assets/bm2012-f6de12ec1b81f29894bc4487b09bce21.jpg) no-repeat -94px -23px;
+      width: 50px;
+      height: 50px;
+      border: 5px solid #EEE;
+      margin-top: 20px;
+      //right: 25px;
+
+      p {
+        color: #EEE;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-top: 6px;
+      }
+    }
+
     nav {
+      margin-top: 30px;
       display: flex;
       flex-flow: row wrap;
       justify-content: space-around;
@@ -24,6 +40,12 @@ body {
         &:hover {
           color: #CCC;
         }
+
+        &.active {
+          color: black;
+          background: #EEE;
+          border-radius: 0.25em;
+        }
       }
     }
   }
@@ -33,5 +55,11 @@ body {
       color: #CCC;
       font-size: 0.8em;
     }
+  }
+}
+
+article {
+  main {
+    margin-bottom: 15px;
   }
 }

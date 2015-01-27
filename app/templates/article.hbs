@@ -1,13 +1,15 @@
-<article {{bind-attr id=id}} class="large-12 columns">
-  <header>
-    <h1>{{title}}</h1>
-  </header>
+<article {{bind-attr id=id}}>
+  <div class="large-12 columns">
+    <header>
+      <h1>{{title}}</h1>
+    </header>
 
-  <main>
-    {{body}}
-  </main>
+    <main>
+      {{body}}
+    </main>
 
-  <footer>
-    <p>Posted on {{date}} in {{category}}.</p>
-  </footer>
+    <footer>
+      <p>Posted on {{date}} in {{category}}.</p>
+    </footer>
+  </div>
 </article>
