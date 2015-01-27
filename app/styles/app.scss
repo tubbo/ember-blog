@@ -1,9 +1,36 @@
+$white         : #FFFFFF;
+$ghost         : #FAFAFA;
+$snow          : #F9F9F9;
+$vapor         : #F6F6F6;
+$white-smoke   : #F5F5F5;
+$silver        : #EFEFEF;
+$smoke         : #EEEEEE;
+$gainsboro     : #DDDDDD;
+$iron          : #CCCCCC;
+$base          : #AAAAAA;
+$aluminum      : #999999;
+$jumbo         : #888888;
+$monsoon       : #777777;
+$steel         : #666666;
+$charcoal      : #555555;
+$tuatara       : #444444;
+$oil           : #333333;
+$jet           : #222222;
+$black         : #000000;
+$cinnabar      : #f04124;
+
+$alert-color: darken($cinnabar, 20%);
+
 @import "bower_components/foundation/scss/foundation.scss";
 @import "bower_components/foundation/scss/normalize.scss";
 
 .error {
   text-align: center;
   color: gray;
+}
+
+.alert-box {
+  text-align: center;
 }
 
 body {
@@ -16,8 +43,7 @@ body {
       width: 50px;
       height: 50px;
       border: 5px solid #EEE;
-      margin-top: 20px;
-      //right: 25px;
+      margin-top: 22px;
 
       p {
         color: #EEE;
@@ -61,5 +87,16 @@ body {
 article {
   main {
     margin-bottom: 15px;
+
+    #more-link {
+      text-align: right;
+    }
+  }
+
+  footer {
+    .date, .category {
+      color: #BBB;
+      font-weight: bold;
+    }
   }
 }

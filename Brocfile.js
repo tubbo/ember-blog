@@ -1,7 +1,7 @@
 /* global require, module, process */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
-    ArticleCollection = require('./lib/article-collection'),
+    Collection = require('./lib/collection'),
     config = require('./config/environment')(process.env.EMBER_ENV),
     app = new EmberApp({
       sassOptions: {
@@ -21,17 +21,16 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
         }
       }
     }),
-    articles = new ArticleCollection({
+    articles = new Collection({
       source: 'app/articles',
-      destination: 'public/articles'
+      destination: 'public/articles
+    }),
+    pages = new Collection({
+      source: 'app/pages',
+      destination: 'public/pages'
     });
 
 articles.compile();
-
-/*app.import('bower_components/ember-document-title/dist/document-title.amd.js', {
-  exports: {
-    'ember-document-title': ['default']
-  }
-});*/
+pages.compile();
 
 module.exports = app.toTree();

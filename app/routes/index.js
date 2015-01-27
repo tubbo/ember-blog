@@ -8,7 +8,7 @@ export default Ember.Route.extend({
 
   setupController: function(controller, articles) {
     articles.forEach(function(article) {
-      $.get('/articles/'+article.get('id')+'.html', function(html) {
+      $.get('/articles/'+article.get('id')+'.preview.html', function(html) {
         article.set('body', new Ember.Handlebars.SafeString(html));
       });
     });
