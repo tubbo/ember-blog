@@ -16,9 +16,9 @@
       </p>
       <p class="large-4 columns">&nbsp;</p>
       <p id="more-link" class="large-2 columns">
-        <a class="tiny round secondary button" {{bind-attr href=permalink}}>
+        {{#link-to 'article' year month day href class="tiny round secondary button"}}
           more &raquo;
-        </a>
+        {{/link-to}}
       </p>
     </footer>
   </div>
