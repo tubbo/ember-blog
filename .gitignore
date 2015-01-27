@@ -4,6 +4,7 @@
 /dist
 /tmp
 /public/articles*
+/public/pages*
 
 # dependencies
 /node_modules

@@ -7,8 +7,9 @@ export default Ember.Route.extend({
   },
 
   setupController: function(controller, page) {
-    $.get('/pages/'+page.get('id')+'.html', function(html) {
-      page.set('body', new Ember.Handlebars.SafeString(html));
+    $.get('/pages/'+page.get('id')+'.html', function(response) {
+      var html = new Ember.Handlebars.SafeString(response);
+      page.set('body', html);
     });
     controller.set('model', page);
   }

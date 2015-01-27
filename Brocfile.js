@@ -1,7 +1,7 @@
 /* global require, module, process */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
-    Collection = require('./lib/collection'),
+    compiler = require('./lib/compiler'),
     config = require('./config/environment')(process.env.EMBER_ENV),
     app = new EmberApp({
       sassOptions: {
@@ -21,14 +21,8 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
         }
       }
     }),
-    articles = new Collection({
-      source: 'app/articles',
-      destination: 'public/articles
-    }),
-    pages = new Collection({
-      source: 'app/pages',
-      destination: 'public/pages'
-    });
+    articles = compiler.build('articles'),
+    pages = compiler.build('pages');
 
 articles.compile();
 pages.compile();
