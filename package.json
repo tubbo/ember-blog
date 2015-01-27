@@ -43,7 +43,6 @@
     "grunt-broccoli": "^0.3.7",
     "grunt-cli": "0.1.13",
     "grunt-contrib-jshint": "0.11.0",
-    "istanbul": "0.3.5",
     "js-yaml": "^3.2.5",
     "jshint-stylish": "^1.0.0",
     "marked": "0.3.2",
