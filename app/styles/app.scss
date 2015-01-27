@@ -11,11 +11,27 @@ header, main, footer, article {
 }
 
 body {
-  footer {
+  header {
     nav {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+
       a {
-        padding-left: 15px;
+        text-align: center;
+        width: 75px;
+
+        &:hover {
+          color: #CCC;
+        }
       }
+    }
+  }
+
+  footer {
+    p {
+      color: #CCC;
+      font-size: 0.8em;
     }
   }
 }

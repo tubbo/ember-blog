@@ -1,5 +1,16 @@
 <header>
-  <h1>psychedeli.ca</h1>
+  <div class="large-4 columns">
+    <h1>psychedeli.ca</h1>
+  </div>
+
+  <div class="large-8 columns">
+    <nav class="right">
+      {{link-to 'home' 'index'}}
+      {{link-to 'about' 'about'}}
+      <a href="http://github.com/tubbo/blog" target="_blank">code</a>
+      <a href="http://travis-ci.org/tubbo/blog" target="_blank">status</a>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -7,8 +18,5 @@
 </main>
 
 <footer>
-  <nav class="right">
-    {{link-to 'home' ''}}
-    {{link-to 'about' 'about'}}
-  </nav>
+  <p id="last-updated">Last updated {{lastModified}}.</p>
 </footer>
