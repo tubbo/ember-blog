@@ -11,7 +11,7 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build --environment production",
-    "test": "ember test && istanbul report lcovonly"
+    "test": "ember test"
   },
   "repository": "https://github.com/tubbo/psychedeli.ca",
   "engines": {
