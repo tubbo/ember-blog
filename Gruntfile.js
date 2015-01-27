@@ -8,12 +8,21 @@
 
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-aws-s3');
+  grunt.loadNpmTasks('grunt-broccoli');
 
-  grunt.registerTask('default', ['jshint', 'shell:build', 'aws_s3']);
+  grunt.registerTask('default', [
+      'jshint',
+      'broccoli:app:build',
+      'aws_s3'
+  ]);
 
   grunt.initConfig({
+    broccoli: {
+      app: {
+        dest: 'dist',
+      }
+    },
     jshint: {
       options: {
         reporter: require('jshint-stylish'),
@@ -27,11 +36,6 @@ module.exports = function(grunt) {
         '*file.js',
         'tests/**/*.js'
       ]
-    },
-    shell: {
-      build: {
-        command: 'ember build --environment production'
-      }
     },
     aws_s3: {
       options: {
