@@ -10,7 +10,7 @@ export default Ember.Route.extend({
     $.get('/articles/'+article.get('id')+'.html', function(html) {
       article.set('body', new Ember.Handlebars.SafeString(html));
     });
-    controller.set('model', article);
+    this._super(controller, article);
   },
 
   _resolveArticleID: function(params) {

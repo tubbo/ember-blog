@@ -1,25 +1,31 @@
-<article {{bind-attr id=id}}>
-  <div class="large-12 columns">
-    <header>
-      <h1>
-        {{link-to title 'article' year month day href}}
-      </h1>
-    </header>
+<div class="large-2 columns">&nbsp;</div>
+<div class="large-8 columns">
+  <article {{bind-attr id=id}}>
+    <div class="large-12 columns">
+      <header>
+        <h1>
+          {{link-to title 'article' year month day href}}
+        </h1>
+      </header>
 
-    <main>
-      {{body}}
-    </main>
+      <main>
+        {{body}}
+      </main>
 
-    <footer>
-      <p class="large-6 columns">
-        Posted <span class="date">{{formattedDate}}</span> in <span class="category">{{category}}</span>.
-      </p>
-      <p class="large-4 columns">&nbsp;</p>
-      <p id="more-link" class="large-2 columns">
-        {{#link-to 'article' year month day href class="tiny round secondary button"}}
-          more &raquo;
-        {{/link-to}}
-      </p>
-    </footer>
-  </div>
-</article>
+      <footer>
+        <p class="large-6 columns">
+          Posted <span class="date">{{formattedDate}}</span> in <span class="category">{{category}}</span>.
+        </p>
+        <div class="large-4 columns">&nbsp;</div>
+        <p id="more-link" class="large-2 columns">
+          {{#if renderingCollection}}
+            {{#link-to 'article' year month day href class="tiny round secondary button"}}
+              more &raquo;
+            {{/link-to}}
+          {{/if}}
+        </p>
+      </footer>
+    </div>
+  </article>
+</div>
+<div class="large-2 columns">&nbsp;</div>

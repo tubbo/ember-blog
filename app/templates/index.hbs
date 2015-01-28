@@ -1,11 +1,13 @@
 {{#each controller}}
   <div class="row">
-    <div class="large-2 columns">&nbsp;</div>
-    <div class="large-8 columns">
-      {{partial 'article'}}
-    </div>
-    <div class="large-2 columns">&nbsp;</div>
+    {{partial 'article'}}
   </div>
 {{else}}
-  <div class="loading empty">No articles found.</div>
+  <div class="large-3 columns">&nbsp;</div>
+  <div class="large-6 columns">
+    <div class="alert-box warning radius">
+      No articles found.
+    </div>
+  </div>
+  <div class="large-3 columns">&nbsp;</div>
 {{/each}}
