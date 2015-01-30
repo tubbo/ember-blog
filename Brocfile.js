@@ -1,7 +1,7 @@
 /* global require, module, process */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
-    compiler = require('./lib/compiler'),
+    compiler = require('words-compiler'),
     config = require('./config/environment')(process.env.EMBER_ENV),
     app = new EmberApp({
       sassOptions: {

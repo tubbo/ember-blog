@@ -5,9 +5,4 @@ import {
 
 moduleFor('view:application', 'ApplicationView');
 
-test('initializes foundation javascript', function() {
-  var view = this.subject();
-  ok(view);
-  view.render();
-  ok(window.Foundation);
-});
+//test('initializes foundation javascript')
