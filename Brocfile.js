@@ -1,9 +1,11 @@
 /* global require, module, process */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
-    compiler = require('words-compiler'),
     config = require('./config/environment')(process.env.EMBER_ENV),
     app = new EmberApp({
+      staticAge: {
+        resources: ['articles', 'pages']
+      },
       sassOptions: {
         includePaths: [
           'bower_components/foundation/scss'
@@ -20,11 +22,6 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
           }
         }
       }
-    }),
-    articles = compiler.build('articles'),
-    pages = compiler.build('pages');
-
-articles.compile();
-pages.compile();
+    });
 
 module.exports = app.toTree();

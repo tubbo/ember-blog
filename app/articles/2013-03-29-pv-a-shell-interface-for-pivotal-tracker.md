@@ -84,8 +84,8 @@ or project ID that `pv` uses to make API calls.
 
 [el]: http://elocal.com
 [pt]: http://pivotaltracker.com
-[pvl]: http://i.imgur.com/PtJaGV2.png
-[pvs]: http://i.imgur.com/5VVADzZ.png
+[pvl]: /images/pv1.png
+[pvs]: /images/pv2.png
 [pvr]: https://github.com/tubbo/pv/blob/master/README.md
 [inst]: https://github.com/tubbo/pv/blob/master/README.md#installation
 [pv]: http://github.com/tubbo/pv
