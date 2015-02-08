@@ -11,7 +11,9 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build --environment production",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "ember deploy:assets --environment production",
+    "postinstall": "bower install"
   },
   "repository": "https://github.com/tubbo/psychedeli.ca",
   "engines": {
@@ -45,6 +47,6 @@
     "grunt-contrib-jshint": "0.11.0",
     "js-yaml": "^3.2.5",
     "jshint-stylish": "^1.0.0",
-    "static-age": "0.0.5"
+    "static-age": "0.0.6"
   }
 }
