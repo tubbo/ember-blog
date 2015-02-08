@@ -12,6 +12,10 @@ var dasherize = require('underscore.string/dasherize'),
 module.exports = {
   description: 'A blog post in Markdown and YAML Front Matter.',
 
+  date: today.format('YYYY-MM-DD'),
+
+  anonymousOptions: [ 'name', 'category', 'tags' ],
+
   /**
    * Configures the entity name to be a dasherized version of the date
    * and title.
@@ -19,10 +23,7 @@ module.exports = {
    * @returns {string} a normalized filename
    */
   normalizeEntityName: function(entityName) {
-    var date = today.format('YYYY-DD-MM'),
-        name = dasherize(entityName);
-
-    return [date, time].join('-');
+    return [this.date, dasherize(entityName)].join('-');
   },
 
   /**
@@ -33,10 +34,16 @@ module.exports = {
    * template.
    */
   locals: function(options) {
+    var name = options.entity.name.replace(this.date+'-', ''),
+        title = name.split('-').join(' '),
+        category = options.entity.options.category || 'gbs',
+        tags = (options.entity.options.tags || '').split(',').join(', ');
+
     return {
-      titleizedModuleName: titleize(classifiedModuleName),
-      todaysDate: today.format(),
-      defaultCategory: 'gbs'
+      titleizedModuleName: title,
+      todaysDate: this.date,
+      category: category,
+      tags: tags
     };
   }
 };
