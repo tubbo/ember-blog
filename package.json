@@ -45,6 +45,6 @@
     "glob": "^4.0.5",
     "js-yaml": "^3.2.5",
     "jshint-stylish": "^1.0.0",
-    "static-age": "0.0.10"
+    "static-age": "0.0.11"
   }
 }
