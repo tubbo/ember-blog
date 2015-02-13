@@ -12,7 +12,7 @@
     "start": "ember server",
     "build": "ember build --environment production",
     "test": "ember test",
-    "deploy": "ember deploy:assets --environment production",
+    "deploy": "ember build --environment production && ember deploy:assets --environment production",
     "postinstall": "bower install"
   },
   "repository": "https://github.com/tubbo/psychedeli.ca",

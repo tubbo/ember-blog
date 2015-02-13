@@ -42,7 +42,7 @@ provided. You can also run tests and deploy to S3.
 
 ### Writing a Post
 
-To generate a new article, run our handy-dandy generator:
+To generate a new article, run the handy-dandy generator:
 
 ```bash
 $ ember generate article TITLE
@@ -81,11 +81,11 @@ $ ember build [--environment=production]
 ### Deploying
 
 Make sure you have **$AWS_ACCESS_KEY_ID** and **$AWS_SECRET_ACCESS_KEY**
-set in your environment, (as well as **$AWS_S3_BUCKET**), then run Grunt
-to deploy the app to Amazon S3:
+set in your environment, (as well as **$AWS_S3_BUCKET**), then run the
+following command to deploy the app to S3:
 
 ```bash
-$ grunt
+$ npm run-script deploy
 ```
 
 ## Further Reading / Useful Links
