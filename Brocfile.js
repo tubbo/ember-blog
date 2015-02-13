@@ -2,9 +2,13 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
     config = require('./config/environment')(process.env.EMBER_ENV),
+    Collection = require('static-age/compiler/collection'),
     app = new EmberApp({
+      vendorFiles: {
+        "handlebars.js": null
+      },
       staticAge: {
-        resources: ['articles', 'pages']
+        resources: ['pages', 'pages']
       },
       sassOptions: {
         includePaths: [
@@ -22,6 +26,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
           }
         }
       }
-    });
+    }),
+   articles = new Collection({ key: 'articles' }),
+   pages = new Collection({ key: 'pages' });
+
+articles.compile();
+pages.compile();
 
 module.exports = app.toTree();

@@ -6,7 +6,7 @@ cache:
     - bower_components
 install: npm install
 script: npm test
-#after_success: npm deploy
+after_success: npm deploy
 env:
   global:
     - secure: AOJ+LfO0apX4NMzXgX9a8pm/+iuUtDofRox5oxVSL77GjYoaOhMrRg6BDzVyjdyaylWbqza2la34dsVUezJufZMJpDpQ/cZVbQWFfUbKlxdZCzxDdi4YX+xhGA5Z9R/L+ketfNZALXe8vbbwXnksV77UHnPiSh8zUjQep+AEqH0=
