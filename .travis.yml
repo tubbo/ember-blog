@@ -6,10 +6,12 @@ cache:
     - bower_components
 install: npm install
 script: npm test
-after_success: npm run-script deploy
-env:
-  global:
-    - secure: AOJ+LfO0apX4NMzXgX9a8pm/+iuUtDofRox5oxVSL77GjYoaOhMrRg6BDzVyjdyaylWbqza2la34dsVUezJufZMJpDpQ/cZVbQWFfUbKlxdZCzxDdi4YX+xhGA5Z9R/L+ketfNZALXe8vbbwXnksV77UHnPiSh8zUjQep+AEqH0=
-    - secure: o889/bNEZvnritIhaSrReTuAZD2WHGtYdAr99sj22dAkg5gZIdCz0Ny+iTLUFwpKb7twDmrWcUAwzWhKzmlhTxBa3YemMQPVAcCFYmkfdypDBlUMAQrQ4SQcsPTJikSHPPZr46kW4iry62Gk2iTg1nwhgsAARwYy0aOoB+eiPXk=
-    - secure: YTJw2q2hx8tdhRhKvTyrhoQQcRAUV6O5yeWD5QKea7NB2Qmoyky+7j7B757PZ1Ve/F8XH88Bxy5LGKAYVsqmjjzHsIZo31042MPQNxiOojqDPfklz4Spej5YTmDz0gD8upcrSnHh0gSskdZDF2NpWGAQkoh10mP4Nda17RszzwQ=
-    - secure: RGxouEvw5f6GXnNIedig7/VyL7Fff1FmZnLT374jIEOQczuxQPT4ZYGr5hekrIrPqGlOPt0v0VAMMbv51N2H6VdXM2Brdz9OJGoSPhWqYx5rFB8/Jueh2kvlT1U9wSjzEHd0sXpn0BdhyxxXVyVjJQfiS26e6+bf7vidN4eUhGg=
+deploy:
+  provider: s3
+  access_key_id:
+    secure: lPDLUcAPcg8SPPyb0CmftapZNpOunKiMigXzSAgLMSHhZxPYvPehQmAKd2GnQjjJY7BMh9NjQHYY0aibyDHZjcwFtnnOMCULdsrfhQ15xFBSSVOj/6kWWvPUjyfQt9gmpRzFK5DoCU3Da+lRB31FZl28IbIDWxQeRg748Usug5Q=
+  secret_access_key:
+    secure: sK85xnp1dS3jYSD0EIrMQdwUc/BeZ46wGSXw8iW/lxMm0vw8vABit1MrqgNVv4TVC26RqkliVSNO+KzS/PYdxmgRP062Gll9f6SunRd4MlWwauObC7C53pQbrP8KawMGmptkzOc2p/HMyQ5/pWvyUX+mrM99FDx9NKimVakJ7v0=
+  bucket: psychedeli.ca
+  skip_cleanup: false
+  acl: public_read
