@@ -20,53 +20,31 @@ You will need the following things properly installed on your computer:
 
 ## Installation
 
-* `git clone https://github.com/tubbo/blog.git [OPTIONAL DIR]`
-* cd to the directory you chose and..
-* `ember install`
-
-## Running in Development
-
-After running the following command, visit your app at <http://localhost:4200>
+Just clone down this repo and install with NPM:
 
 ```bash
-$ ember server
+git clone https://github.com/tubbo/blog.git
+cd blog
+npm install
 ```
-
-**Note:** This is not required for use in production.
 
 ## Usage
 
-Mostly, the app doesn't need to be touched unless it's being developed
-upon. To write articles, you can use a handy-dandy generator that is
-provided. You can also run tests and deploy to S3.
-
-### Writing a Post
-
-To generate a new article, run the handy-dandy generator:
+Run the following command to start the development server:
 
 ```bash
-$ ember generate article TITLE
+$ npm start
 ```
-
-Then, edit the file generated at **app/articles/YYYY-MM-DD-title.md**.
-The generator will automatically insert today's date to prefix the
-article and allow files to be naturally listed in order of publish date.
 
 ### Running Tests
 
 Tests are written with QUnit and run with Testem. Phantom.JS is also
 required to run tests within the console.
 
-To run tests in the console:
+To run tests:
 
 ```bash
-$ ember test
-```
-
-To run tests in the browser:
-
-```bash
-$ ember test --server
+$ npm test
 ```
 
 ### Building
