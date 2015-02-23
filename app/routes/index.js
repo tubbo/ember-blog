@@ -7,7 +7,8 @@ export default Ember.Route.extend({
 
   afterModel: function(model) {
     model.forEach(function(article) {
-      Ember.$.get('/articles/'+article.get('id')+'.preview.html', function(html) {
+      var url = '/articles/'+article.get('id')+'.preview.html';
+      Ember.$.get(url, function(html) {
         article.set('body', new Ember.Handlebars.SafeString(html));
       });
     });
