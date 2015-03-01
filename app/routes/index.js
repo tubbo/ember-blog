@@ -6,6 +6,7 @@ export default Ember.Route.extend({
   },
 
   afterModel: function(model) {
+    this.set('title', 'articles');
     model.forEach(function(article) {
       var url = '/articles/'+article.get('id')+'.preview.html';
       Ember.$.get(url, function(html) {
