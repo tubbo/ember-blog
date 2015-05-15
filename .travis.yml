@@ -4,18 +4,19 @@ cache:
   directories:
     - node_modules
     - bower_components
-install: make deps
-script: make test
-after_success: make dist
+install: npm install
+script: npm test
+after_success: npm run-script build
 deploy:
   provider: s3
+  bucket: psychedeli.ca
+  acl: public_read
+  local_dir: "./dist"
+  skip_cleanup: true
+  endpoint: psychedeli.ca.s3-website-us-east-1.amazonaws.com
+  detect_encoding: true
   access_key_id:
     secure: lPDLUcAPcg8SPPyb0CmftapZNpOunKiMigXzSAgLMSHhZxPYvPehQmAKd2GnQjjJY7BMh9NjQHYY0aibyDHZjcwFtnnOMCULdsrfhQ15xFBSSVOj/6kWWvPUjyfQt9gmpRzFK5DoCU3Da+lRB31FZl28IbIDWxQeRg748Usug5Q=
   secret_access_key:
     secure: sK85xnp1dS3jYSD0EIrMQdwUc/BeZ46wGSXw8iW/lxMm0vw8vABit1MrqgNVv4TVC26RqkliVSNO+KzS/PYdxmgRP062Gll9f6SunRd4MlWwauObC7C53pQbrP8KawMGmptkzOc2p/HMyQ5/pWvyUX+mrM99FDx9NKimVakJ7v0=
-  bucket: psychedeli.ca
-  acl: public_read
-  local_dir: ./dist
-  skip_cleanup: true
-  endpoint: psychedeli.ca.s3-website-us-east-1.amazonaws.com
-  detect_encoding: true
+
