@@ -4,9 +4,9 @@ cache:
   directories:
     - node_modules
     - bower_components
-install: npm install
-script: npm test
-after_success: npm run-script build
+install: make deps
+script: make test
+after_success: make dist
 deploy:
   provider: s3
   access_key_id:

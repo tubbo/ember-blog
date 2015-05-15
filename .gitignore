@@ -21,3 +21,7 @@ testem.log
 # credentials
 .env
 aws.csv
+
+.bundle
+tags
+vendor

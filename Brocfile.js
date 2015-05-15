@@ -10,21 +10,10 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
       staticAge: {
         resources: ['pages', 'pages']
       },
-      sassOptions: {
-        includePaths: [
-          'bower_components/foundation/scss'
-        ]
-      },
-      inlineContent: {
-        'google-analytics' : {
-          file: './ga.js',
-          postProcess: function(content) {
-            return content.replace(
-                /\{\{GOOGLE_ANALYTICS_ID\}\}/g,
-                config.googleAnalyticsId
-            );
-          }
-        }
+      'ember-cli-foundation-sass': {
+        'modernizr': true,
+        'fastclick': true,
+        'foundationJs': 'all'
       }
     }),
    articles = new Collection({ key: 'articles' }),
