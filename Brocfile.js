@@ -4,6 +4,9 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
     config = require('./config/environment')(process.env.EMBER_ENV),
     Collection = require('static-age/compiler/collection'),
     app = new EmberApp({
+      legacyFilesToAppend: [
+        'moment.js'
+      ],
       vendorFiles: {
         "handlebars.js": null
       },

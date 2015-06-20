@@ -1,7 +1,7 @@
-{{#each controller}}
-  <div class="row">
-    {{partial 'article'}}
-  </div>
+{{#each model as |article|}}
+  <article-preview article=article>
+    {{article.body}}
+  </article>
 {{else}}
   <div class="large-3 columns">&nbsp;</div>
   <div class="large-6 columns">

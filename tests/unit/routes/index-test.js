@@ -1,6 +1,7 @@
 import {
   moduleFor,
-  test
+  test,
+  assert
 } from 'ember-qunit';
 
 moduleFor('route:index', 'IndexRoute', {
@@ -8,5 +9,5 @@ moduleFor('route:index', 'IndexRoute', {
 
 test('loads preview content into body attribute', function() {
   var route = this.subject();
-  ok(route.get('model'));
+  assert.ok(route.get('model'));
 });
