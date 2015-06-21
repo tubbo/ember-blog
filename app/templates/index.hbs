@@ -1,5 +1,13 @@
-{{#each arrangedContent}}
-  {{blog-article title=title year=year month=month day=day date=date href=href body=preview category=category}}
+{{#each arrangedContent as |article|}}
+  {{blog-article
+    title=article.title
+    year=article.year
+    month=article.month
+    day=article.day
+    date=article.date
+    href=article.href
+    body=article.preview
+    category=article.category}}
 {{else}}
   <div class="large-3 columns">&nbsp;</div>
   <div class="large-6 columns">
