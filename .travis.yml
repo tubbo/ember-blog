@@ -17,9 +17,9 @@ before_install:
 
 install: npm install
 
-script: make
+script: make test
 
-#after_success: make
+after_success: make
 
 deploy:
   provider: s3
