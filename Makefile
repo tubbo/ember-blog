@@ -25,7 +25,7 @@ $(PREFIX)/bin/babel:
 	@npm install -g babel
 
 $(PREFIX)/bin/ember:
-	@npm install -g ember
+	@npm install -g ember-cli
 
 lib: bundle $(LIB)
 lib/%.js: src/%.js
