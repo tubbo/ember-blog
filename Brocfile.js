@@ -14,6 +14,15 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
         'modernizr': true,
         'fastclick': true,
         'foundationJs': 'all'
+      },
+      contentSecurityPolicy: {
+        'default-src': "'none'",
+        'script-src': "'self'",
+        'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
+        'connect-src': "'self'",
+        'img-src': "'self'",
+        'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+        'media-src': "'self'"
       }
     });
 

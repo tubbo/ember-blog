@@ -6,27 +6,24 @@ export default Ember.Component.extend({
   classNames: ['article'],
   article: null,
 
-  get title() {
-    return this.article.title;
-  }
+  title: function() {
+    return this.get('article').get('title');
+  }.property('article.title'),
 
-  get category() {
-    return new Ember.Handlebars.compile(
-      '<span class="category">'+this.article.category+'</span>'
-    );
-  }
+  category: function() {
+    return this.get('article').get('category');
+  }.property('article.category'),
 
-  get date() {
-    return new Ember.Handlebars.compile(
-      '<time datetime='+this._dateTime+'>'+this._humanDate+'</time>'
-    );
-  }
+  date: function() {
+    return moment(this.get('publishedAt')).fromNow();
+  }.property('_publishedAt'),
 
-  get _dateTime() {
-    return moment(this.article.publishedAt).formatDate();
-  }
+  dateTime: function() {
+    return moment(this.get('_publishedAt')).toISO();
+  }.property('_publishedAt'),
 
-  get _humanDate() {
-    return moment(this.article.publishedAt).distanceOfTimeInWords();
-  }
+  _publishedAt: function() {
+    return this.get('article').get('date');
+  }.property('article.date')
+
 });

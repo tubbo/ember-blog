@@ -5,10 +5,10 @@ LIB = $(SRC:src/%.js=lib/%.js)
 
 all: clean lib dist
 
-.PHONY: clean all test deps
+.PHONY: clean all test deps node_modules bower_components release
 
 clean:
-	@rm -rf $(LIB) tmp dist
+	@rm -rf $(LIB) tmp dist public/articles/*.json public/pages/*.json public/pages.json public/articles.json
 
 node_modules:
 	npm install

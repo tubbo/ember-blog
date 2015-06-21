@@ -1,7 +1,7 @@
 {{#each model as |article|}}
-  <article-preview article=article>
+  <blog-article title={{article.title}} category-name={{article.category}} date-string={{article.date}}>
     {{article.body}}
-  </article>
+  </blog-article>
 {{else}}
   <div class="large-3 columns">&nbsp;</div>
   <div class="large-6 columns">

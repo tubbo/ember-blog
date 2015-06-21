@@ -2,8 +2,13 @@
   <h1>{{title}}</h1>
 </header>
 <main>
-  {{yield}}
+  <markdown-content src={{yield}}></markdown-content>
 </main>
 <footer>
-  Posted in {{category}} on {{date}}.
+  <p>
+    Posted in
+    <span class="category">{{category}}</span>
+    on
+    <time datetime="{{dateTime}}">{{date}}</time>.
+  </p>
 </footer>

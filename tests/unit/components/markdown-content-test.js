@@ -1,6 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 
-moduleForComponent('article-preview', 'Unit | Component | article preview', {
+moduleForComponent('markdown-content', 'Unit | Component | markdown content', {
   // Specify the other units that are required for this test
   // needs: ['component:foo', 'helper:bar'],
   unit: true
