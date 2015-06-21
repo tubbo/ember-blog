@@ -4,9 +4,6 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
     config = require('./config/environment')(process.env.EMBER_ENV),
     compile = require('./lib/compiler'),
     app = new EmberApp({
-      legacyFilesToAppend: [
-        'moment.js'
-      ],
       vendorFiles: {
         "handlebars.js": null
       },
@@ -22,7 +19,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
 
 app.import('bower_components/moment/moment.js');
 
-compile('articles');
+compile('articles', 'pages');
 compile('pages');
 
 module.exports = app.toTree();
