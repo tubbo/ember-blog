@@ -2,7 +2,7 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
     config = require('./config/environment')(process.env.EMBER_ENV),
-    Collection = require('static-age/compiler/collection'),
+    compile = require('./lib/compiler'),
     app = new EmberApp({
       legacyFilesToAppend: [
         'moment.js'
@@ -18,11 +18,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
         'fastclick': true,
         'foundationJs': 'all'
       }
-    }),
-   articles = new Collection({ key: 'articles' }),
-   pages = new Collection({ key: 'pages' });
+    });
 
-articles.compile();
-pages.compile();
+app.import('bower_components/moment/moment.js');
+
+compile('articles');
+compile('pages');
 
 module.exports = app.toTree();

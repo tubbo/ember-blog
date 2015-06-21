@@ -8,7 +8,19 @@ sudo: false
 cache:
   directories:
     - node_modules
-after_success: npm run-script build
+    - bower_components
+
+before_install:
+  - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
+  - "npm config set spin false"
+  - "npm install -g npm@^2"
+
+install: make bundle
+
+script: make test
+
+after_success: make
+
 deploy:
   provider: s3
   bucket: psychedeli.ca
@@ -22,15 +34,3 @@ deploy:
   secret_access_key:
     secure: sK85xnp1dS3jYSD0EIrMQdwUc/BeZ46wGSXw8iW/lxMm0vw8vABit1MrqgNVv4TVC26RqkliVSNO+KzS/PYdxmgRP062Gll9f6SunRd4MlWwauObC7C53pQbrP8KawMGmptkzOc2p/HMyQ5/pWvyUX+mrM99FDx9NKimVakJ7v0=
 
-before_install:
-  - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
-  - "npm config set spin false"
-  - "npm install -g npm@^2"
-
-install:
-  - npm install -g bower
-  - npm install
-  - bower install
-
-script:
-  - npm test
