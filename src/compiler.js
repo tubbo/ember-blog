@@ -9,6 +9,12 @@ export default function compile(directory) {
       destination = path.join(root, 'public', directory),
       index = new Index(destination);
 
+  fs.mkdir(destination, function(error) {
+    if (error) {
+      //console.log(destination, 'exists so didnt mkdir');
+    }
+  });
+
   fs.readdir(source, function(dirReadError, files) {
     if (dirReadError) { throw dirReadError; }
 
