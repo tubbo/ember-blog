@@ -34,3 +34,6 @@ dist: bundle
 
 test: bundle lib
 	ember test
+
+watch: bundle lib
+	ember server

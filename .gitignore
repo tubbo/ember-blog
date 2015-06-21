@@ -25,3 +25,4 @@ aws.csv
 .bundle
 tags
 vendor
+/lib

@@ -19,7 +19,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
 
 app.import('bower_components/moment/moment.js');
 
-compile('articles', 'pages');
+compile('articles');
 compile('pages');
 
 module.exports = app.toTree();
