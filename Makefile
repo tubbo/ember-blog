@@ -16,10 +16,13 @@ node_modules:
 bower_components:
 	bower install
 
-bundle: $(PREFIX)/bin/bower node_modules bower_components
+bundle: $(PREFIX)/bin/bower $(PREFIX)/bin/babel node_modules bower_components
 
-/usr/local/bin/bower:
+$(PREFIX)/bin/bower:
 	@npm install -g bower
+
+$(PREFIX)/bin/babel:
+	@npm install -g babel
 
 lib: bundle $(LIB)
 lib/%.js: src/%.js
