@@ -24,7 +24,7 @@ bundle: $(PREFIX)/bin/bower node_modules bower_components
 lib: bundle $(LIB)
 lib/%.js: src/%.js
 	@mkdir -p $(@D)
-	node_modules/.bin/babel $< -o $@
+	babel $< -o $@
 
 dist: bundle lib
 	ember build --environment=$(EMBER_ENV)
