@@ -15,7 +15,7 @@ before_install:
   - "npm config set spin false"
   - "npm install -g npm@^2"
 
-install: make bundle
+install: npm install
 
 script: make test
 

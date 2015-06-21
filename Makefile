@@ -1,5 +1,4 @@
 EMBER_ENV ?= development
-PREFIX ?= /usr/local
 SRC = $(wildcard src/*.js)
 LIB = $(SRC:src/%.js=lib/%.js)
 
@@ -16,16 +15,7 @@ node_modules:
 bower_components:
 	bower install
 
-bundle: $(PREFIX)/bin/bower $(PREFIX)/bin/babel $(PREFIX)/bin/ember node_modules bower_components
-
-$(PREFIX)/bin/bower:
-	@npm install -g bower
-
-$(PREFIX)/bin/babel:
-	@npm install -g babel
-
-$(PREFIX)/bin/ember:
-	@npm install -g ember-cli
+bundle: node_modules bower_components
 
 lib: bundle $(LIB)
 lib/%.js: src/%.js

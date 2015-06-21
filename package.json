@@ -10,7 +10,8 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember test"
+    "test": "ember test",
+    "postinstall": "bower install"
   },
   "repository": "https://github.com/tubbo/psychedeli.ca",
   "engines": {
@@ -20,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel": "^5.6.1",
+    "bower": "^1.4.1",
     "broccoli-asset-rev": "^2.0.2",
     "broccoli-clean-css": "1.0.0",
     "codeclimate-test-reporter": "0.0.4",
