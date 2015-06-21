@@ -5,7 +5,7 @@ LIB = $(SRC:src/%.js=lib/%.js)
 
 all: clean lib dist
 
-.PHONY: clean all test deps node_modules bower_components release
+.PHONY: clean all test deps
 
 clean:
 	@rm -rf $(LIB) tmp dist public/articles/*.json public/pages/*.json public/pages.json public/articles.json
@@ -29,7 +29,7 @@ lib/%.js: src/%.js
 	@mkdir -p $(@D)
 	node_modules/.bin/babel $< -o $@
 
-dist: bundle
+dist: bundle lib
 	ember build --environment=$(EMBER_ENV)
 
 test: bundle lib

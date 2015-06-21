@@ -8,8 +8,12 @@ export default class Index {
 
   push(article) {
     this.articles.push(article.attributes);
-    fs.writeFile(this.path, JSON.stringify(this.articles), function(error) {
+    fs.writeFile(this.path, this.toJSON(), function(error) {
       if (error) { throw error; }
     });
+  }
+
+  toJSON() {
+    return JSON.stringify({ articles: this.articles })
   }
 }

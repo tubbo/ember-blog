@@ -20,8 +20,23 @@ export default DS.Model.extend({
   }.property('_splitID'),
 
   href: function() {
-    return this.get('_splitID')[3];
-  }.property('_splitID'),
+    return this.get('id')
+      .split(this.get('year')+'-').join('')
+      .split(this.get('month')+'-').join('')
+      .split(this.get('day')+'-').join('');
+  }.property('id,year,month,day'),
+
+  preview: function() {
+    return this.get('body').split("\n\n")[0] + this.get('footnotes');
+  }.property('body'),
+
+  footnotes: function() {
+    return "\n\n"+this.get('body').split("\n").map(function(line) {
+      if (line.match(/\[(\w+)\]\:\shttp/)) {
+        return line;
+      }
+    }).join("\n");
+  }.property('body'),
 
   /**
    * @private

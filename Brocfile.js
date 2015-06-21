@@ -27,6 +27,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app'),
     });
 
 app.import('bower_components/moment/moment.js');
+app.import('bower_components/marked/lib/marked.js');
 
 compile('articles');
 compile('pages');

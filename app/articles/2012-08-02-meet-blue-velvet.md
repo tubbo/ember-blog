@@ -6,8 +6,6 @@ date: 2012-08-02
 tags: "#facebook, #open_graph, `blue_velvet, ruby"
 ---
 
-# use your facebook page as a cms
-
 It's certainly been a while, hasn't it? I've been busy with gigs and
 vacation, so there's been little time to blog. I *have* been working on
 stuff...including the foundation of a record label (which I'll talk about

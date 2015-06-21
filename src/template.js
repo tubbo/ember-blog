@@ -11,7 +11,11 @@ export default class Template {
 
     this.compiled = frontMatter(contents);
     this.attributes = this.compiled.attributes;
+    this.attributes.id = this.id;
     this.attributes.body = this.compiled.body;
-    this.result = JSON.stringify(this.attributes);
+  }
+
+  toJSON() {
+    return JSON.stringify({ article: this.attributes });
   }
 }

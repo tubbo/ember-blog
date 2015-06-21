@@ -19,7 +19,7 @@ export default function compile(directory) {
         let template = new Template(filename, contents),
             jsonPath = path.join(root, 'public', directory, template.id+'.json')
 
-        fs.writeFile(jsonPath, template.result, { encoding: 'utf-8' }, function(error) {
+        fs.writeFile(jsonPath, template.toJSON(), { encoding: 'utf-8' }, function(error) {
           if (error) { throw error };
         });
 

@@ -1,4 +1,7 @@
 import DS from 'ember-data';
-import Ember from 'ember';
 
-export default DS.RESTAdapter;
+export default DS.ActiveModelAdapter.extend({
+  _buildURL: function(modelName, id) {
+    return this._super(modelName, id) + '.json';
+  }
+});

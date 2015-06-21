@@ -1,14 +1,13 @@
 <header>
-  <h1>{{title}}</h1>
+  <h1>{{link-to title 'article' year month day href}}</h1>
 </header>
 <main>
-  <markdown-content src={{yield}}></markdown-content>
+  {{html}}
 </main>
 <footer>
   <p>
     Posted in
-    <span class="category">{{category}}</span>
-    on
-    <time datetime="{{dateTime}}">{{date}}</time>.
+    {{link-to category 'category' category class="category"}}
+    <time datetime="{{date}}">{{postedAt}}</time>.
   </p>
 </footer>
