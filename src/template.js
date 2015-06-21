@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import frontMatter from 'front-matter';
-import merge from 'merge';
 
 export default class Template {
   constructor(filename, contents) {
@@ -13,6 +12,7 @@ export default class Template {
     this.attributes = this.compiled.attributes;
     this.attributes.id = this.id;
     this.attributes.body = this.compiled.body;
+    this.destination = this.id+'.json';
   }
 
   toJSON() {

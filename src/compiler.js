@@ -1,4 +1,3 @@
-import frontMatter from 'front-matter';
 import path from 'path';
 import fs from 'fs';
 import Template from './template';
@@ -6,18 +5,19 @@ import Index from './index';
 
 export default function compile(directory) {
   let root = process.cwd(),
-      index = new Index(path.join(root, 'public', directory+'.json')),
-      sourcesPath = path.join(root, 'app', directory);
+      source = path.join(root, 'app', directory),
+      destination = path.join(root, 'public', directory),
+      index = new Index(destination);
 
-  fs.readdir(sourcesPath, function(dirReadError, files) {
+  fs.readdir(source, function(dirReadError, files) {
     if (dirReadError) { throw dirReadError; }
 
     files.forEach(function(filename) {
-      fs.readFile(path.join(sourcesPath, filename), { encoding: 'utf-8' }, function(fileReadError, contents) {
+      fs.readFile(path.join(source, filename), { encoding: 'utf-8' }, function(fileReadError, contents) {
         if (fileReadError) { throw fileReadError; }
 
         let template = new Template(filename, contents),
-            jsonPath = path.join(root, 'public', directory, template.id+'.json')
+            jsonPath = path.join(destination, template.destination);
 
         fs.writeFile(jsonPath, template.toJSON(), { encoding: 'utf-8' }, function(error) {
           if (error) { throw error };

@@ -1,8 +1,8 @@
 import fs from 'fs';
 
 export default class Index {
-  constructor(indexPath) {
-    this.path = indexPath;
+  constructor(path) {
+    this.path = path+'.json';
     this.articles = [];
   }
 
