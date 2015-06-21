@@ -16,13 +16,10 @@ node_modules:
 bower_components:
 	bower install
 
-bundle: $(PREFIX)/bin/npm $(PREFIX)/bin/bower node_modules bower_components
+bundle: $(PREFIX)/bin/bower node_modules bower_components
 
 /usr/local/bin/bower:
 	@npm install -g bower
-
-/usr/local/bin/npm:
-	$(error "Please install Node.js")
 
 lib: bundle $(LIB)
 lib/%.js: src/%.js
