@@ -24,8 +24,8 @@ bundle: $(PREFIX)/bin/npm $(PREFIX)/bin/bower node_modules bower_components
 /usr/local/bin/npm:
 	$(error "Please install Node.js")
 
-lib: $(LIB)
-lib/%.js: bundle src/%.js
+lib: bundle $(LIB)
+lib/%.js: src/%.js
 	@mkdir -p $(@D)
 	node_modules/.bin/babel $< -o $@
 

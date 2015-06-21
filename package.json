@@ -19,6 +19,7 @@
   "author": "Tom Scott",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.6.1",
     "broccoli-asset-rev": "^2.0.2",
     "broccoli-clean-css": "1.0.0",
     "codeclimate-test-reporter": "0.0.4",
