@@ -19,10 +19,16 @@
   </div>
 </header>
 
-<main class="row" {{bindAttr id=currentPath}}>
-  {{outlet}}
+<main class="row" id={{currentPath}}>
+  <div class="large-2 columns">&nbsp;</div>
+  <div class="large-8 columns">
+    {{outlet}}
+  </div>
+  <div class="large-2 columns">&nbsp;</div>
 </main>
 
 <footer class="row">
-  <p id="last-updated">Last updated just now.</p>
+  <div class="large-12 columns">
+    <p class="copyright">Copyright &copy; 2015 Tom Scott.</p>
+  </div>
 </footer>
