@@ -22,14 +22,14 @@ export default function compile(directory) {
       fs.readFile(path.join(source, filename), { encoding: 'utf-8' }, function(fileReadError, contents) {
         if (fileReadError) { throw fileReadError; }
 
-        let template = new Template(filename, contents),
-            jsonPath = path.join(destination, template.destination);
+        let template = new Template(filename, contents, destination);
 
-        fs.writeFile(jsonPath, template.toJSON(), { encoding: 'utf-8' }, function(error) {
-          if (error) { throw error };
-        });
-
-        index.push(template);
+        if (template.publishable) {
+          template.compile();
+          index.push(template);
+        } else {
+          console.warn("Template", template.id, "will not be published.");
+        }
       });
     });
   });
