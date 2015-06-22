@@ -4,7 +4,7 @@ LIB = $(SRC:src/%.js=lib/%.js)
 
 all: clean lib dist
 
-.PHONY: clean all test deps
+.PHONY: clean all test deps cdn
 
 clean:
 	@rm -rf $(LIB) tmp dist public/articles/*.json public/pages/*.json public/pages.json public/articles.json
@@ -30,3 +30,6 @@ test: bundle lib
 
 watch: bundle lib
 	ember server
+
+cdn: bundle lib
+	node ./bin/update-cdn.js
