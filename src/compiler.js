@@ -1,13 +1,15 @@
 import path from 'path';
 import fs from 'fs';
+import inflectors from 'inflectors';
 import Template from './template';
 import Index from './index';
 
 export default function compile(directory) {
   let root = process.cwd(),
+      type = inflectors.singularize(directory),
       source = path.join(root, 'app', directory),
       destination = path.join(root, 'public', directory),
-      index = new Index(destination);
+      index = new Index(destination, directory);
 
   fs.mkdir(destination, function(error) {
     if (error) {
@@ -22,7 +24,7 @@ export default function compile(directory) {
       fs.readFile(path.join(source, filename), { encoding: 'utf-8' }, function(fileReadError, contents) {
         if (fileReadError) { throw fileReadError; }
 
-        let template = new Template(filename, contents, destination);
+        let template = new Template(filename, contents, destination, type);
 
         if (template.publishable) {
           template.compile();

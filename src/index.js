@@ -1,19 +1,22 @@
 import fs from 'fs';
 
 export default class Index {
-  constructor(path) {
+  constructor(path, type) {
     this.path = path+'.json';
-    this.articles = [];
+    this.items = [];
+    this.type = type;
   }
 
-  push(article) {
-    this.articles.push(article.attributes);
+  push(item) {
+    this.items.push(item.attributes);
     fs.writeFile(this.path, this.toJSON(), function(error) {
       if (error) { throw error; }
     });
   }
 
   toJSON() {
-    return JSON.stringify({ articles: this.articles })
+    let items = {};
+    items[this.type] = this.items;
+    return JSON.stringify(items);
   }
 }
