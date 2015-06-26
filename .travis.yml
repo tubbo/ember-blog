@@ -22,6 +22,8 @@ script: make test
 after_success: make
 
 deploy:
+  on:
+    branch: master
   provider: s3
   bucket: psychedeli.ca
   acl: public_read
