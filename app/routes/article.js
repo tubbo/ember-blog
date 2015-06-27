@@ -8,6 +8,6 @@ export default Ember.Route.extend({
       params.day,
       params.title
     ].join('-');
-    return this.store.find('article', articleID);
+    return this.store.findRecord('article', articleID);
   }
 });
