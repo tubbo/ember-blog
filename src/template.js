@@ -41,7 +41,7 @@ export default class Template {
 
   get data() {
     return {
-      type: this.type,
+      type: inflectors.singularize(this.type),
       id: this.id,
       attributes: this.attributes
     }
@@ -49,7 +49,7 @@ export default class Template {
 
   get links() {
     return {
-      self: "http://psychedeli.ca/"+inflectors.pluralize(this.type)+"/"+this.id+".json"
+      self: "http://psychedeli.ca/"+this.type+"/"+this.id+".json"
     }
   }
 

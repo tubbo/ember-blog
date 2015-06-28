@@ -28,5 +28,5 @@ dist: bundle lib
 test: bundle lib
 	ember test
 
-watch: bundle lib
+watch: bundle clean lib
 	ember server
