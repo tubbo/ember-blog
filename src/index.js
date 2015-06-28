@@ -3,14 +3,12 @@ import fs from 'fs';
 /**
  * Contains a collection of Template objects and writes them as an index
  * to disk.
- *
- * @class Index
  */
 export default class Index {
   /**
    * @constructor
-   * @param String path
-   * @param String type
+   * @param {string} path The path to this JSON index.
+   * @param {string} type The type of this JSON index, used for the dir.
    */
   constructor(path, type) {
     this.path = path+'.json';
@@ -21,7 +19,7 @@ export default class Index {
   /**
    * Add a Template to the index.
    *
-   * @param Template item
+   * @param {Template} item A document to be added to the index.
    */
   push(item) {
     this.items.push(item.asItem);
@@ -31,7 +29,7 @@ export default class Index {
   /**
    * Writes a JSON representation of the index to disk.
    *
-   * @returns boolean
+   * @throws {Exception} if the file can't be written
    */
   compile() {
     fs.writeFile(this.path, this.toJSON());
@@ -40,7 +38,7 @@ export default class Index {
   /**
    * Output all templates as JSON.
    *
-   * @returns String
+   * @returns {string}
    */
   toJSON() {
     return JSON.stringify({

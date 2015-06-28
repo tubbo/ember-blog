@@ -4,12 +4,10 @@ import Template from './template';
 import Index from './index';
 
 /**
- * Top-level function for compiling a directory of static pages. Takes
- * one argument that specifies which directory in +app/+ it will be
- * compiling.
+ * Compiles all static pages within a directory.
  *
- * @param string directory - a directory in app/ that contains static
- * pages.
+ * @param {String} directory The directory we are loading documents
+ * from.
  */
 export default function compile(directory) {
   let root = process.cwd(),

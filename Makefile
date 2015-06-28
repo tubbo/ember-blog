@@ -7,7 +7,7 @@ all: clean lib dist
 .PHONY: clean all test deps
 
 clean:
-	@rm -rf $(LIB) tmp dist public/articles/*.json public/pages/*.json public/pages.json public/articles.json
+	@rm -rf $(LIB) tmp dist doc public/articles/*.json public/pages/*.json public/pages.json public/articles.json
 
 node_modules:
 	npm install
@@ -30,3 +30,6 @@ test: bundle lib
 
 watch: bundle clean lib
 	ember server
+
+doc:
+	esdoc -c config/docs.json

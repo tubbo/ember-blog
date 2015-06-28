@@ -1,0 +1,6 @@
+{
+  "source": "./src",
+  "destination": "./doc",
+  "title": "psychedeli.ca compiler engine",
+  "index": "src/COMPILER.md"
+}

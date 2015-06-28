@@ -6,16 +6,14 @@ import inflectors from 'inflectors';
 /**
  * The object responsible for reading and parsing template data as well
  * as compiling singular templates down to JSON.
- *
- * @class Template
  */
 export default class Template {
   /**
    * @constructor
-   * @param String filename
-   * @param String contents
-   * @param String destination
-   * @param String type
+   * @param {String} filename
+   * @param {String} contents
+   * @param {String} destination
+   * @param {String} type
    */
   constructor(filename, contents, destination, type) {
     this.source = contents;
@@ -27,7 +25,7 @@ export default class Template {
   /**
    * The filename of this page without its extension or path.
    *
-   * @type String
+   * @type {String}
    */
   get id() {
     return path.basename(this.filename, '.md');
@@ -36,7 +34,7 @@ export default class Template {
   /**
    * The destination JSON path that this file will be compiled to.
    *
-   * @type String
+   * @type {String}
    */
   get destination() {
     return path.join(this.path, this.id+'.json');
@@ -45,7 +43,7 @@ export default class Template {
   /**
    * Compiled attributes by the front-matter module.
    *
-   * @type Object
+   * @type {Object}
    */
   get compiled() {
     return frontMatter(this.source);
@@ -54,7 +52,7 @@ export default class Template {
   /**
    * Combined body and attributes from front-matter.
    *
-   * @type Object
+   * @type {Object}
    */
   get attributes() {
     let attrs = {};
@@ -89,7 +87,7 @@ export default class Template {
   /**
    * Attributes formatted for the JSON API standard.
    *
-   * @type Object
+   * @type {Object}
    */
   get data() {
     return {
@@ -103,7 +101,7 @@ export default class Template {
    * To maintain JSON API compliance, this is a "link" to the current
    * JSON document.
    *
-   * @type String
+   * @type {String}
    */
   get links() {
     return {
@@ -115,7 +113,7 @@ export default class Template {
    * An object formatted for the JSON API standard that is used as the
    * basis for this.toJSON()
    *
-   * @type Object
+   * @type {Object}
    */
   get asJSON() {
     return {
@@ -128,7 +126,7 @@ export default class Template {
    * An object formatted for the JSON API collection standard that is
    * used in Index#toJSON.
    *
-   * @type Object
+   * @type {Object}
    */
   get asItem() {
     let attrs = item.data;
@@ -142,7 +140,7 @@ export default class Template {
   /**
    * The JSON API representation of this template.
    *
-   * @returns String
+   * @returns {String}
    */
   toJSON() {
     return JSON.stringify(this.asJSON);
