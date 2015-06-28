@@ -12,9 +12,7 @@ export default function compile(directory) {
       index = new Index(destination, directory);
 
   fs.mkdir(destination, function(error) {
-    if (error) {
-      //console.log(destination, 'exists so didnt mkdir');
-    }
+    // swallow errors
   });
 
   fs.readdir(source, function(dirReadError, files) {

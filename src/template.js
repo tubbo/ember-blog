@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import frontMatter from 'front-matter';
+import inflectors from 'inflectors';
 
 export default class Template {
   constructor(filename, contents, destination, type) {
@@ -25,22 +26,42 @@ export default class Template {
   get attributes() {
     let attrs = {};
     let defaults = {
-      id: this.id,
       body: this.compiled.body
     };
+
     for (let attr in defaults) {
       attrs[attr] = defaults[attr];
     }
     for (let attr in this.compiled.attributes) {
       attrs[attr] = this.compiled.attributes[attr];
     }
+
     return attrs;
   }
 
+  get data() {
+    return {
+      type: this.type,
+      id: this.id,
+      attributes: this.attributes
+    }
+  }
+
+  get links() {
+    return {
+      self: "http://psychedeli.ca/"+inflectors.pluralize(this.type)+"/"+this.id+".json"
+    }
+  }
+
+  get asJSON() {
+    return {
+      data: this.data,
+      links: this.links
+    }
+  }
+
   toJSON() {
-    let attrs = {};
-    attrs[this.type] = this.attributes;
-    return JSON.stringify(attrs);
+    return JSON.stringify(this.asJSON);
   }
 
 
