@@ -8,7 +8,13 @@ export default class Index {
   }
 
   push(item) {
-    this.items.push(item.asJSON);
+    let attrs = item.data;
+    attrs.links = {};
+    for (let link in item.links) {
+      attrs.links[link] = item.links[link]
+    }
+    this.items.push(attrs);
+
     fs.writeFile(this.path, this.toJSON());
   }
 
