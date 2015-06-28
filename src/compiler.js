@@ -3,6 +3,14 @@ import fs from 'fs';
 import Template from './template';
 import Index from './index';
 
+/**
+ * Top-level function for compiling a directory of static pages. Takes
+ * one argument that specifies which directory in +app/+ it will be
+ * compiling.
+ *
+ * @param string directory - a directory in app/ that contains static
+ * pages.
+ */
 export default function compile(directory) {
   let root = process.cwd(),
       source = path.join(root, 'app', directory),

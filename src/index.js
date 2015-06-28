@@ -1,23 +1,47 @@
 import fs from 'fs';
 
+/**
+ * Contains a collection of Template objects and writes them as an index
+ * to disk.
+ *
+ * @class Index
+ */
 export default class Index {
+  /**
+   * @constructor
+   * @param String path
+   * @param String type
+   */
   constructor(path, type) {
     this.path = path+'.json';
     this.items = [];
     this.type = type;
   }
 
+  /**
+   * Add a Template to the index.
+   *
+   * @param Template item
+   */
   push(item) {
-    let attrs = item.data;
-    attrs.links = {};
-    for (let link in item.links) {
-      attrs.links[link] = item.links[link]
-    }
-    this.items.push(attrs);
+    this.items.push(item.asItem);
+    save();
+  }
 
+  /**
+   * Writes a JSON representation of the index to disk.
+   *
+   * @returns boolean
+   */
+  compile() {
     fs.writeFile(this.path, this.toJSON());
   }
 
+  /**
+   * Output all templates as JSON.
+   *
+   * @returns String
+   */
   toJSON() {
     return JSON.stringify({
       data: this.items
