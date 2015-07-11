@@ -1,4 +1,4 @@
-/* global marked */
+/* global marked, moment */
 import Ember from 'ember';
 
 export default Ember.Component.extend({
@@ -10,6 +10,6 @@ export default Ember.Component.extend({
   }.property('body'),
 
   postedAt: function() {
-    return new moment(this.get('date')).fromNow();
+    return moment(this.get('date')).fromNow();
   }.property('date'),
 });

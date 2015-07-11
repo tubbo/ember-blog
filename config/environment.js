@@ -3,7 +3,6 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'psychedelica',
-    podModulePrefix: 'psychedelica',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -17,16 +16,6 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-
-    contentSecurityPolicy: {
-      'default-src': "'none'",
-      'script-src': "'self' http://psychedelica.dev:35729/livereload.js?snipver=1'",
-      'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
-      'connect-src': "'self' ws://psychedelica.dev:35729/livereload",
-      'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
-      'media-src': "'self'"
     }
   };
 

@@ -129,10 +129,10 @@ export default class Template {
    * @type {Object}
    */
   get asItem() {
-    let attrs = item.data;
+    let attrs = this.asJSON.data;
     attrs.links = {};
-    for (let link in item.links) {
-      attrs.links[link] = item.links[link]
+    for (let link in this.asJSON.links) {
+      attrs.links[link] = this.asJSON.links[link]
     }
     return attrs;
   }

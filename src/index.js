@@ -23,7 +23,7 @@ export default class Index {
    */
   push(item) {
     this.items.push(item.asItem);
-    save();
+    this.save();
   }
 
   /**
@@ -31,7 +31,7 @@ export default class Index {
    *
    * @throws {Exception} if the file can't be written
    */
-  compile() {
+  save() {
     fs.writeFile(this.path, this.toJSON());
   }
 

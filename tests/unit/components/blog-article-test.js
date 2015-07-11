@@ -6,7 +6,7 @@ moduleForComponent('blog-article', 'Unit | Component | blog article', {
   unit: true
 });
 
-/*test('it renders', function(assert) {
+test('it renders', function(assert) {
   assert.expect(2);
 
   // Creates the component instance
@@ -16,4 +16,4 @@ moduleForComponent('blog-article', 'Unit | Component | blog article', {
   // Renders the component to the page
   this.render();
   assert.equal(component._state, 'inDOM');
-});*/
+});
