@@ -409,3 +409,5 @@ You can view the entire source code to this blog on [GitHub][source].
 [@tomdale]: https://twitter.com/tomdale
 [travis]: https://travis-ci.org
 [heroku]: https://heroku.com
+[bp]: http://www.ember-cli.com/extending/#generators-and-blueprints
+[router]: http://guides.emberjs.com/v1.12.0/routing/
