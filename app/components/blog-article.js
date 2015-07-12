@@ -1,12 +1,22 @@
-/* global marked, moment */
+/* global marked, moment, Prism */
 import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'article',
   classNames: ['article'],
 
+  didInsertElement: function() {
+    Prism.highlightAll();
+  },
+
   html: function() {
-    return new Ember.Handlebars.SafeString(marked(this.get('body')));
+    let renderer = new marked.Renderer();
+
+    renderer.code = function(src, lang) {
+      return `<pre class="language-${lang}" rel="${lang}"><code class="language-${lang}">${src}</code></pre>`;
+    };
+
+    return new Ember.Handlebars.SafeString(marked(this.get('body'), { renderer: renderer }));
   }.property('body'),
 
   postedAt: function() {

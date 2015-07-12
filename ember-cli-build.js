@@ -32,6 +32,8 @@ module.exports = function(defaults) {
 
   app.import('bower_components/moment/moment.js');
   app.import('bower_components/marked/lib/marked.js');
+  app.import('bower_components/prism/prism.js');
+  app.import('bower_components/prism/themes/prism.css');
 
   return app.toTree();
 };
