@@ -4,7 +4,7 @@ LIB = $(SRC:src/%.js=lib/%.js)
 
 all: clean lib dist
 
-.PHONY: clean all test deps
+.PHONY: clean all test deps distro
 
 clean:
 	@rm -rf $(LIB) tmp dist doc public/articles/*.json public/pages/*.json public/pages.json public/articles.json
@@ -33,3 +33,6 @@ watch: bundle clean lib
 
 doc:
 	esdoc -c config/docs.json
+
+distro:
+	npm run-script invalidate-cdn
