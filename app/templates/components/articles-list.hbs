@@ -1,0 +1,19 @@
+{{#each articles as |article|}}
+  {{blog-article
+    title=article.title
+    year=article.year
+    month=article.month
+    day=article.day
+    date=article.date
+    href=article.href
+    body=article.preview
+    category=article.category}}
+{{else}}
+  <div class="large-3 columns">&nbsp;</div>
+  <div class="large-6 columns">
+    <div class="alert-box warning radius">
+      No articles found.
+    </div>
+  </div>
+  <div class="large-3 columns">&nbsp;</div>
+{{/each}}
