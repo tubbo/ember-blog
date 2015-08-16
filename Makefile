@@ -4,7 +4,7 @@ LIB = $(SRC:src/%.js=lib/%.js)
 
 all: clean lib dist
 
-.PHONY: clean all test deps distro
+.PHONY: clean all test deps distro tag release
 
 clean:
 	@rm -rf $(LIB) tmp dist doc public/articles/*.json public/pages/*.json public/pages.json public/articles.json
@@ -23,13 +23,13 @@ lib/%.js: src/%.js
 	babel $< -o $@
 
 dist: bundle lib
-	ember build --environment=$(EMBER_ENV)
+	@ember build --environment $(EMBER_ENV)
 
 test: bundle lib
-	ember test
+	@npm test
 
 watch: bundle clean lib
-	ember server
+	@npm start
 
 doc:
 	esdoc -c config/docs.json

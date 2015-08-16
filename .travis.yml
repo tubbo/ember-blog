@@ -8,7 +8,10 @@ sudo: false
 cache:
   directories:
     - node_modules
-    # - bower_components
+    - bower_components
+
+env:
+  - EMBER_ENV=production
 
 before_install:
   - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
@@ -18,8 +21,6 @@ before_install:
 install: npm install
 
 script: make
-
-#after_success: make
 
 deploy:
   on:
